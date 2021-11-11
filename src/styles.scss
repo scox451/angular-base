@@ -1,0 +1,24 @@
+/* Add application styles & imports to this file! */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.actions{
+  display: flex;
+  justify-content:flex-end;
+
+  button{
+    margin:.5em;
+  }
+
+}
+
+.row{
+  display:flex;
+
+  .mat-form-field{
+    // margin: .25em;
+    // border: 2px 2px 2px 2px;
+    // border-color: black;
+    // border-style: solid;
+    flex-grow: 1;
+  }
+}

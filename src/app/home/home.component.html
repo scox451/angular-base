@@ -1,0 +1,95 @@
+<form [formGroup]="searchForm">
+<div class=row>
+<mat-form-field>  
+  <input matInput name="firstName" 
+    type="text" 
+    formControlName="firstNameField"
+    placeholder="Search" />
+</mat-form-field>  
+ 
+</div>
+<!-- <mat-form-field>
+<input type="text"
+       placeholder="Order#"
+       matInput
+       name="orderField"
+       formControlName="orderField"
+       [matAutocomplete]="auto"
+       required>
+<mat-autocomplete #auto="matAutocomplete"
+                  (optionSelected)='selectedOrder=$event.option.value'
+                  [displayWith]="displayFn">
+    <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+    <ng-container *ngIf="!isLoading">
+        <mat-option *ngFor="let order of orders"
+                    [value]="order">
+            {{order.orderId}}
+        </mat-option>
+    </ng-container>
+</mat-autocomplete>
+<mat-error *ngIf="orderField.hasError('invalid')">
+    Select an order
+</mat-error>
+</mat-form-field>
+<mat-form-field>
+<mat-select placeholder="Payment type"
+            formControlName="paymentTypeField">
+    <mat-option *ngFor="let item of paymentTypes"
+                [value]="item">
+        {{item}}
+    </mat-option>
+</mat-select>
+</mat-form-field>
+<mat-form-field>
+<input matInput
+       formControlName="amountField"
+       type="number"
+       placeholder="Amount">
+<span matPrefix>$</span>
+</mat-form-field>
+<mat-form-field *ngIf="hasCorrectedAmountField">
+<input matInput
+       formControlName="correctedAmountField"
+       type="number"
+       placeholder="Corrected amount"
+       (keypress)="inputService.isNumericDecimal($event)">
+<span matPrefix>$</span>
+<mat-error *ngIf="correctedAmountField.hasError('max')">
+    Must be less than $100,000
+</mat-error>
+<mat-error *ngIf="correctedAmountField.hasError('min')">
+    Must be more than $0
+</mat-error>
+</mat-form-field>
+<mat-form-field>
+<input matInput
+       formControlName="checkNumberField"
+       placeholder="Check #"
+       maxlength="50">
+</mat-form-field>
+<mat-form-field>
+<textarea matInput
+          [matTextareaAutosize]="true"
+          minRows="2"
+          placeholder="Comment"
+          formControlName="commentField"></textarea>
+</mat-form-field> -->
+</form>
+<div class="actions">
+  <button mat-stroked-button
+    (click)="clear()">
+    Clear
+  </button>
+  <button mat-raised-button
+    color="primary"
+    (click)="search()"
+    cdkFocusInitial>
+    Search
+  </button>
+</div>
+
+<div class="row" *ngFor="let result of results">
+
+    {{result.title}}
+
+</div>

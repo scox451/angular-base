@@ -1,0 +1,1 @@
+export { ImdbAPIService } from './imdb.api.service'
