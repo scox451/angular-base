@@ -43,7 +43,7 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     AppRoutingModule,
     SharedModule ],
-  declarations: [ AppComponent],
+  declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ],
   //providers: [
   //  { provide: APP_INITIALIZER, useFactory: initUser, multi: true, deps: [UserService] },

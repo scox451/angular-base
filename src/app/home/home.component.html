@@ -1,12 +1,40 @@
 <form [formGroup]="searchForm">
-<div class=row>
-<mat-form-field>  
-  <input matInput name="firstName" 
-    type="text" 
-    formControlName="firstNameField"
-    placeholder="Search" />
-</mat-form-field>  
- 
+  <div class="row">
+    <mat-button-toggle-group>
+      <mat-button-toggle value="grid">
+        <mat-icon>grid_view</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="list">
+        <mat-icon>list</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div class=row>
+    <div class="spacer"></div>
+    <mat-form-field>
+      <input matInput name="firstName" type="text" formControlName="firstNameField" placeholder="Search" />
+    </mat-form-field>
+    <div class="spacer"></div>
+  </div>
+
+</form>
+<!-- <div class="actions">
+  <button mat-stroked-button (click)="clear()">
+    Clear
+  </button>
+  <button mat-raised-button color="primary" (click)="search()" cdkFocusInitial>
+    Search
+  </button>
+</div> -->
+<div class="row-center-content">
+  <div class="search-results" >
+    <div class="row" *ngFor="let result of results">
+      <img [src]="result.image" width="200" />
+      <div class="gutters">
+        <h5>{{result.title}}</h5>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- <mat-form-field>
 <input type="text"
@@ -74,22 +102,3 @@
           placeholder="Comment"
           formControlName="commentField"></textarea>
 </mat-form-field> -->
-</form>
-<div class="actions">
-  <button mat-stroked-button
-    (click)="clear()">
-    Clear
-  </button>
-  <button mat-raised-button
-    color="primary"
-    (click)="search()"
-    cdkFocusInitial>
-    Search
-  </button>
-</div>
-
-<div class="row" *ngFor="let result of results">
-
-    {{result.title}}
-
-</div>

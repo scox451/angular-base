@@ -1,3 +1,15 @@
-<div class="app">
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+    <!-- browse icons https://fonts.google.com/icons?selected=Material+Icons -->
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Movie Db</span>
+
+    <span class="spacer"></span>
+   
+
+</mat-toolbar>
+<div class="app-main-panel">
+    <router-outlet></router-outlet>
 </div>
+

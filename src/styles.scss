@@ -1,6 +1,10 @@
 /* Add application styles & imports to this file! */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+body{
+  margin: 0;
+}
+
 .actions{
   display: flex;
   justify-content:flex-end;
@@ -21,4 +25,18 @@
     // border-style: solid;
     flex-grow: 1;
   }
+}
+
+.row-center-content{
+  display: flex;
+  justify-content:center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.gutters{
+  padding: 0em 0.5em;
+  justify-items: stretch;
 }
