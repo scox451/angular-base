@@ -1,24 +1,23 @@
 /* Add application styles & imports to this file! */
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-body{
+body {
   margin: 0;
 }
 
-.actions{
+.actions {
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
 
-  button{
-    margin:.5em;
+  button {
+    margin: 0.5em;
   }
-
 }
 
-.row{
-  display:flex;
+.row {
+  display: flex;
 
-  .mat-form-field{
+  .mat-form-field {
     // margin: .25em;
     // border: 2px 2px 2px 2px;
     // border-color: black;
@@ -27,16 +26,17 @@ body{
   }
 }
 
-.row-center-content{
+.row-center-content {
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 
 .spacer {
   flex: 1 1 auto;
 }
 
-.gutters{
+.gutters {
+  flex: 1 ;
   padding: 0em 0.5em;
-  justify-items: stretch;
+  width: 100%;
 }

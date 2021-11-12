@@ -1,8 +1,16 @@
 .search-results {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.5em 0.5em;
+    width:100%;
     // background-color: cornflowerblue;
+}
+
+.list-resulte{
+    grid-template-columns: 1fr;
+}
+
+.tile-results{
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .search-results > * {

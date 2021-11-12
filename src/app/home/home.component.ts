@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { switchMap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
 
 import { ImdbAPIService } from '@services';
 import { SearchData, SearchResult } from '@models';
@@ -16,13 +16,18 @@ export class HomeComponent {
   lastNameField: FormControl;
 
   results: SearchResult[];
+  displayMode:string ="";
 
   constructor(private fb: FormBuilder, private imdbApiService: ImdbAPIService) {}
 
   ngOnInit(): void {
     this.initControls();
+
+    this,this.displayMode="list-results";
     this.firstNameField.valueChanges
       .pipe(
+        distinctUntilChanged(),
+        debounceTime(500),
         switchMap((filterText) => {
           if (!filterText) return;
 
